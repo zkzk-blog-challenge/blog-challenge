@@ -1,10 +1,22 @@
 const fs = require('fs');
 const path = require('path');
-
-const submissionsDir = 'public/submissions';
+const { execSync } = require('child_process');
 
 function toUnixTimestamp(date) {
   return Math.floor(date.getTime() / 1000);
+}
+
+function getChangedJsonFiles() {
+  try {
+    execSync('git fetch origin main'); // 이전 커밋 보장
+    const diffOutput = execSync('git diff --name-only origin/main HEAD').toString();
+    return diffOutput
+      .split('\n')
+      .filter(f => f.startsWith('public/submissions/') && f.endsWith('.json'));
+  } catch (err) {
+    console.warn('⚠️ git diff failed, skipping file update.');
+    return [];
+  }
 }
 
 function processFile(filePath) {
@@ -18,15 +30,9 @@ function processFile(filePath) {
   console.log(`✅ Updated: ${filePath}`);
 }
 
-function walk(dir) {
-  fs.readdirSync(dir, { withFileTypes: true }).forEach(entry => {
-    const entryPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      walk(entryPath);
-    } else if (entry.isFile() && entry.name.endsWith('.json')) {
-      processFile(entryPath);
-    }
-  });
+const files = getChangedJsonFiles();
+if (files.length === 0) {
+  console.log('ℹ️ No changed JSON files found.');
+} else {
+  files.forEach(processFile);
 }
-
-walk(submissionsDir);
