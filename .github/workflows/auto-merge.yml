@@ -18,11 +18,10 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install octokit
-        run: npm install @octokit/rest
-        working-directory: .github/scripts
+      - name: Install dependencies (octokit)
+        run: npm install
 
-      - name: Run merge script
+      - name: Run merge and label script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
