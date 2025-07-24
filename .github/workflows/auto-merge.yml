@@ -8,6 +8,7 @@ on:
 jobs:
   merge-and-label:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -17,12 +18,12 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install jq
-        run: sudo apt-get install -y jq
+      - name: Install octokit
+        run: npm install @octokit/rest
+        working-directory: .github/scripts
 
       - name: Run merge script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
-        run: |
-          node .github/scripts/auto-merge-and-label.js
+        run: node .github/scripts/auto-merge-and-label.js
