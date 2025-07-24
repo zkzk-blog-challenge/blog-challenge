@@ -1,3 +1,5 @@
+// .github/scripts/auto-merge-and-label.js
+
 const { Octokit } = require("@octokit/rest");
 
 const token = process.env.GITHUB_TOKEN;
@@ -9,7 +11,7 @@ const octokit = new Octokit({ auth: token });
 function getDeadlineTimestamp() {
   const now = new Date();
   const sunday = new Date(now);
-  sunday.setUTCHours(14, 59, 59, 999); // KST 토요일 23:59:59 → UTC 기준 일요일 14:59:59
+  sunday.setUTCHours(14, 59, 59, 999); // UTC 일요일 14:59:59 = KST 토요일 23:59:59
   return Math.floor(sunday.getTime() / 1000);
 }
 
@@ -37,7 +39,7 @@ async function run() {
       for (const file of files) {
         if (!file.filename.endsWith(".json")) continue;
 
-        const res = await fetch(file.raw_url); // Node.js 20 이상에서 fetch 사용 가능
+        const res = await fetch(file.raw_url); // Node 18+ 내장 fetch 사용
         const json = await res.json();
         const cDate = json.cDate;
 
@@ -63,7 +65,7 @@ async function run() {
 
       console.log(`✅ PR #${prNumber} merged with label: ${label}`);
     } catch (e) {
-      console.error(`❌ PR #${prNumber} 오류:`, e.message);
+      console.error(`❌ PR #${prNumber} 처리 중 오류:`, e.message);
     }
   }
 }
