@@ -13,6 +13,7 @@
 | 우영인 | [📖 블로그](https://blog.naver.com/younging2004) | [![GitHub](https://img.shields.io/badge/young-181717?style=flat\&logo=github\&logoColor=white)](https://github.com/young)             | [📂 이동](https://github.com/zkzk-blog-challenge/blog-challenge/tree/main/public/submissions/young)       |
 | 조은비 | [📖 블로그](https://wavicle.tistory.com/)        | [![GitHub](https://img.shields.io/badge/Ebee-181717?style=flat\&logo=github\&logoColor=white)](https://github.com/Ebee)               | [📂 이동](https://github.com/zkzk-blog-challenge/blog-challenge/tree/main/public/submissions/Ebee)        |
 | 황종혁 | [📖 블로그](https://sulfurman.tistory.com/)      | [![GitHub](https://img.shields.io/badge/Sulfurman03-181717?style=flat\&logo=github\&logoColor=white)](https://github.com/Sulfurman03) | [📂 이동](https://github.com/zkzk-blog-challenge/blog-challenge/tree/main/public/submissions/Sulfurman03) |
+| 홍민기 | [📖 블로그](https://mingiraffe03.tistory.com/) | [![GitHub](https://img.shields.io/badge/mingiraffe-181717?style=flat&logo=github&logoColor=white)](https://github.com/mingiraffe) | [📂 이동](https://github.com/zkzk-blog-challenge/blog-challenge/tree/main/public/submissions/mingiraffe) |
 
 
 ## 규칙
