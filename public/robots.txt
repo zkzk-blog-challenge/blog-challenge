@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /zkzk-blog-challenge/
+Sitemap: https://zkzk-blog-challenge.github.io/sitemap.xml
