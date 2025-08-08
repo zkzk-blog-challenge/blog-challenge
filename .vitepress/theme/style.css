@@ -137,3 +137,42 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/*tags and archives page style*/
+.posts {
+    padding: 4px 0 4px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-dot {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 3px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--li-dot-color);
+}
+
+.post-container {
+    color: var(--vp-c-text-1);
+    font-size: 0.9375rem;
+    font-weight: 400;
+}
+.post-container:hover {
+    color: var(--vp-c-brand);
+}
+
+.post-info {
+    font-size: 12px;
+}
+.post-info span {
+    display: inline-block;
+    padding: 0 8px;
+    background-color: var(--vp-c-bg-alt);
+    margin-right: 10px;
+    transition: 0.4s;
+    border-radius: 2px;
+    color: var(--vp-c-text-1);
+}
+

@@ -1,8 +1,8 @@
 <script setup>
 import { computed } from "vue";
-import { useData } from "vitepress";
+import { useData, withBase } from "vitepress";
 import DefaultTheme from "vitepress/theme";
-import UtterancComment from "@/components/UtterancComment.vue";
+import UtterancComment from "@/.vitepress/theme/components/UtterancComment.vue";
 
 const { Layout } = DefaultTheme;
 
@@ -20,6 +20,13 @@ const commentTheme = computed(() => {
 
 <template>
   <Layout>
+    <template #doc-before>
+      <div style="padding-top: 20px" class="post-info" v-if="!frontmatter.page">
+        <span v-for="item in frontmatter.tags"
+            ><a :href="withBase(`/posts/tags.html?tag=${item}`)"> {{ item }}</a></span
+        >
+      </div>
+    </template>
     <template #doc-after>
       <UtterancComment
         v-if="frontmatter.comment"

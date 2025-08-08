@@ -1,8 +1,11 @@
 import { defineConfig } from "vitepress";
+import { getPosts } from '../theme/serverUtils'
 import path from "path";
 
 import nav from "./nav";
 import sidebar from "./sidebar";
+
+const PAGESIZE = 10
 
 // https://vitepress.dev/reference/site-config
 
@@ -30,18 +33,27 @@ export default defineConfig({
   themeConfig: {
     nav: nav,
     sidebar: sidebar,
+
+    posts: await getPosts(PAGESIZE),
+
     socialLinks: [
       // You can add any icon from simple-icons (https://simpleicons.org/)
       { icon: "github", link: "https://github.com/zkzk-blog-challenge" },
       { icon: "notion", link: "https://www.notion.so/over-immersion/1e02634e00d5808aad7dd2624f89f21d" },
     ],
+
     lastUpdated: {
       text: '마지막 업데이트 날짜',
       formatOptions: {
         dateStyle: 'full',
         timeStyle: 'medium'
       }
-    }
+    },
+
+    editLink: {
+        pattern: 'https://github.com/zkzk-blog-challenge/zkzk-blog-challenge.github.io/edit/main/:path',
+        text: '✏️ 이 페이지 편집하기'
+    },
   },
 
   srcExclude: ["**/README.md"],

@@ -13,41 +13,19 @@ const rulesMenu = {
   ],
 };
 
-const blogMenu = {
-  text: "블로그",
-  link: "/blogs",
-};
+// const blogMenu = {
+//   text: "블로그",
+//   link: "/blogs",
+// };
 
 const postsMenu = {
   text: "아카이브",
   link: "/posts",
 };
 
-// const linkMenu = {
-//   text: "링크 모음",
-//   items: [
-//     {
-//       items: [
-//         { text: "JS", link: "/posts/links/javascript" },
-//         { text: "CSS", link: "/posts/links/typescript" },
-//       ],
-//     },
-//     {
-//       items: [
-//         { text: "VUE", link: "/posts/links/vue" },
-//         { text: "REACT", link: "/posts/links/react" },
-//       ],
-//     },
-//     {
-//       items: [{ text: "AI", link: "/posts/links/ai" }],
-//     },
-//     {
-//       items: [{ text: "IOS", link: "/posts/links/ios" }],
-//     },
-//     {
-//       items: [{ text: "etc", link: "/posts/links/etc" }],
-//     },
-//   ],
-// };
-
-export default [homeMenu, rulesMenu, blogMenu, postsMenu];
+export default [
+  homeMenu, 
+  rulesMenu,
+  // blogMenu, 
+  postsMenu
+];

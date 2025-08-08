@@ -1,13 +1,15 @@
 ---
 title: 규칙
-titleTemplate: zkzk-rule-book
 description: Flutter Setting in Macbook Pro m1 with Cursor
 head:
   - - meta
     - name: keywords
       content: Flutter, Flutter Setting, Macbook, Macbook m1, Dart, Cursor
 outline: deep
+
 lastUpdated: True
+comment: false
+editLink: false
 ---
 
 아래의 4가지 내용 포함하여 오픈채팅으로 신청
